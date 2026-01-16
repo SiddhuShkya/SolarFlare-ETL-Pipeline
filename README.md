@@ -4,7 +4,7 @@
 
 This project involves creating an ETL (Extract, Transform, Load) pipeline using Apache Airflow. The pipeline extracts data from an external API (in this case, NASA's **Solar Flare (DONKI) API**), transforms the data, and loads it into a Postgres database. The entire workflow is orchestrated by Airflow, which allows scheduling, monitoring, and managing workflows.
 
-<img src="./images/ETL-Starter.jpg" 
+<img src="./images/manually-triggered-pipeline.png" 
            alt="Image Caption" 
            style="border:1px solid white; padding:1px; background:#fff;width: 2000px" />
 
@@ -49,6 +49,10 @@ The transformed data is loaded into a Postgres database. Duplicate flare entries
 ### Architecture and Workflow:
 
 The ETL pipeline is orchestrated in Airflow using a DAG (Directed Acyclic Graph). The pipeline consists of the following stages:
+
+<img src="./images/ETL-Starter.jpg" 
+           alt="Image Caption" 
+           style="border:1px solid white; padding:1px; background:#fff;width: 1000px" />
 
 1. **`Extract (E)`**:  
 The `HttpOperator` is used to make HTTP GET requests to NASA’s Solar Flare (DONKI) API.  
