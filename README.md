@@ -50,8 +50,8 @@ The transformed data is loaded into a Postgres database. Duplicate flare entries
 
 The ETL pipeline is orchestrated in Airflow using a DAG (Directed Acyclic Graph). The pipeline consists of the following stages:
 
-<img src="./images/ETL-Starter.jpg" 
-           alt="Image Caption" 
+<img src="./images/SolarFlare-Pipeline.jpg" 
+           alt="Solar Flare ETL Architecture" 
            style="border:1px solid white; padding:1px; background:#fff;width: 1000px" />
 
 1. **`Extract (E)`**:  
