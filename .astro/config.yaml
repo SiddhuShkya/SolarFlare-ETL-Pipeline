@@ -1,2 +1,4 @@
+postgres:
+    port: 5432
 project:
     name: etl-starter-project

@@ -357,55 +357,61 @@ As for your other fields :
 
 > You can also see the output of each tasks, by selecting task and from there selecting XCom.
 
-2.6 See your data inside your postgres table
+2.6 View your loaded data as a postgres table
 
-> Since the postgres is running inside a container, you cannot diretcly open the url to see your postgres table. In order to connect to postgres container, we need to have DBeaver in our machine.
+> Since the postgres is running inside a container, you cannot diretcly open the url to see your postgres table. In order to connect to postgres container, we need to have a sql software like PgAdmin..
 
-- Go to the link : [DBeaver Download Page](https://dbeaver.io/download/)
-- Download DBeaver based on your system
+- Go to the link : [PgAdmin Setup Guide](https://github.com/SiddhuShkya/SQL-Bootcamp-Zero-To-Hero/blob/main/docs/Course%20materials/postgresql-and-pgadmin-setup.md)
+- Download and set up your PgAdmin based on your system, if not already.
 
-> After installing DBeaver you should be able to see the DBeaver-ce icon from the apps menu
+> After installing PgAdmin you should be able to see the PgAdmin icon from the apps menu
 
-<img src="screenshots/DBeaver-app-menu.png"
+<img src="screenshots/pgadmin-app-menu.png"
      alt="Image Caption"
      style="border:1px solid white; padding:1px; background:#fff;" />
 
-> Open the dbeaver-ce application, and from there go to the database tab and click on 'New Database Connection' and from there such and click PostgreSQL.
+> Open the PgAdmin application, and from there click on 'Add New Server'
 
-<img src="screenshots/dbeaver-postgresql.png"
+<img src="screenshots/pgadmin-add-new-server.png"
      alt="Image Caption"
      style="border:1px solid white; padding:1px; background:#fff;" />
 
-> After clicking next, setup your connection configuration
+> After clicking next, setup your new server connection configuration
 
 In our case:
 
-- Host -> localhost
-- Port -> 5432
-- Database -> postgres
-- Username -> postgres
-- Password -> postgres
+- General tab: `Name` -> Docker Postgres
+- Connection tab: `Host name/address` -> localhost
+- Connection tab: `Port` -> 5432
+- Connection tab: `Maintenance database` -> postgres
+- Connection tab: `Username` -> postgres
+- Connection tab: `Password` -> postgres
 
 > Important, the configuration might change based on the set-up we had in our docker-compose.yml file
 
-<img src="screenshots/dbeaver-postgres-conn.png"
+<img src="screenshots/pgadmin-postgres-conn.png"
      alt="Image Caption"
      style="border:1px solid white; padding:1px; background:#fff;" />
 
-> After successfully connecting to your postgres table, you should be able to see your tables (solar_flare_data) from the dbeaver ui
+> Hit save, you should be able to connect to your new server. Now expand the server and you should be able to see the postgres database
 
-<img src="screenshots/postgres-table.png"
+<img src="screenshots/pgadmin-postgres-database.png"
      alt="Image Caption"
      style="border:1px solid white; padding:1px; background:#fff;" />
 
-> You can also view you table along with its records using the 'Open SQL Script' from the SQL Editor tab.
+> Right click on the postgres database and select 'Query Tool'. You should be able to see a query editor window.
 
-Use the SQL Script:
+<img src="screenshots/pgadmin-query-editor.png"
+     alt="Image Caption"
+     style="border:1px solid white; padding:1px; background:#fff;" />
+
+> In the query editor window, type the following SQL query to view the data in the solar_flare_data table:
 
 ```sql
 SELECT * FROM solar_flare_data;
 ```
-> Select the query and press 'Ctrl + Enter' to run the script.
+
+> Select the query and press the play (Execute script) button.
 
 <img src="screenshots/solar-flare-table-records.png"
      alt="Image Caption"
